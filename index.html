@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador JS</title>
+    <link rel="stylesheet" href="/css/mobile.css" />
+    <link
+      rel="stylesheet"
+      href="/css/tablet.css"
+      media="screen and (min-width:643px)"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/desktop.css"
+      media="screen and (min-width:1024px)"
+    />
+    <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header__container">
+      <img src="/img/logo.svg" alt="logo-alura" class="header__image" />
+    </header>
+    <main class="main__container">
+      <textarea
+        cols="30"
+        rows="10"
+        class="main-text"
+        autocomplete="off"
+        placeholder="Ingrese el texto aqui"
+        id="text-area"
+      ></textarea>
+      <div class="main-advertencia">
+        <img
+          src="/icons/icon-message.svg"
+          alt="icon-advertencia"
+          class="img-icon"
+        />
+        <p class="main__text-adver">Solo letras minúsculas y sin acentos</p>
+      </div>
+      <section class="main__buttons">
+        <input
+          type="submit"
+          value="Encriptar"
+          class="button button-encriptar"
+          id="encriptar"
+        />
+        <input
+          type="submit"
+          value="Desencriptar"
+          class="button button-desencriptar"
+          id="desencriptar"
+        />
+      </section>
+    </main>
+    <footer>
+      <section class="footer__container-mensaje" id="mostrar-texto"></section>
+    </footer>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

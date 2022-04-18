@@ -1,0 +1,48 @@
+html {
+  font-size: 62.5%;
+}
+.header__image {
+  height: 4.6rem;
+  width: 3.1rem;
+  margin-top: 4rem;
+  margin-left: 2rem;
+}
+.main-text {
+  margin-left: 2rem;
+  margin-top: 10rem;
+  height: 44.8rem;
+}
+.main-text::placeholder {
+  height: 4.8rem;
+  width: 68.8rem;
+  font-weight: 600;
+}
+.main-advertencia {
+  display: flex;
+  width: 70%;
+  margin-left: 5rem;
+  font-size: 1.5rem;
+}
+.main__buttons {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.button {
+  height: 6.7rem;
+  width: 28rem;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+.button:first-child {
+  margin-right: 1.5rem;
+}
+footer {
+  width: 100%;
+  margin-left: 5rem;
+  text-align: center;
+  overflow-x: hidden;
+}
+.footer__container-mensaje {
+  width: 90%;
+  height: 13.3rem;
+}

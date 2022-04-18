@@ -1,0 +1,65 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  display: grid;
+  grid-template-columns: 10% 60% 1fr;
+}
+.header__image{
+  margin-left: 5rem;
+}
+.main-text{
+  height: 60rem;
+}
+.main-advertencia{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  left: -13rem;
+  width: auto;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+.img-icon{
+  width: 2rem;
+}
+.main__buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: fit-content;
+}
+.button{
+  margin: 0;
+}
+footer {
+  margin: 0;
+  overflow-x: hidden;
+}
+.footer__container-mensaje {
+  width: 90%;
+  height: 100vh;
+  padding-top: 10rem;
+  margin: 0;
+  left: 0;
+  text-align: center;
+  margin-left: 1rem;
+}
+.footer-img {
+  display: block;
+  height: 50%;
+  width: 100%;
+  padding-right: 3rem;
+}
+.footer-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+}
+.footer-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
