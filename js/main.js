@@ -2,17 +2,17 @@ const areaTexto = document.getElementById("text-area");
 const btnEncriptar = document.getElementById("encriptar");
 const btnDesencriptar = document.getElementById("desencriptar");
 const mostrarTexto = document.getElementById("mostrar-texto");
-const btnCopiar = document.getElementById("btn-cop");
+const btnCopiar = document.querySelector("#btn-cop");
+let band;
 
 cambiarContenedor();
 btnEncriptar.addEventListener("click", (e) => {
-  cambiarContenedor();
+  band = false;
+  cambiarContenedor(band);
 });
 btnDesencriptar.addEventListener("click", (e) => {
-  desencriptarContenedor();
-});
-btnCopiar.addEventListener("click", (e) => {
-  copiarTexto();
+  band = true;
+  cambiarContenedor(band);
 });
 
 function encriptar(texto) {
@@ -31,10 +31,13 @@ function encriptar(texto) {
 
 function desencriptar(texto) {
   let textoDes = "";
-  
 }
 
-function cambiarContenedor() {
+function cambiarContenedor(band) {
+  let variable;
+  band
+    ? (variable = desencriptar(areaTexto.value))
+    : (variable = encriptar(areaTexto.value));
   if (areaTexto.value == "") {
     mostrarTexto.innerHTML = `<img src="/img/img-desktop.svg" alt="imagen-niño" class="footer-img">
     <h3 class="footer-title">Ningún mensaje fue encontrado</h3>
@@ -42,22 +45,18 @@ function cambiarContenedor() {
       Ingresa el texto que desees encriptar o desencriptar.
     </p>`;
   } else {
-    mostrarTexto.innerHTML = `<p class="resultado" id="text-co">${encriptar(
-      areaTexto.value
-    )}</p>
-    <button class="button btn-copiar" id="btn-cop">Copiar</button>`;
+    mostrarTexto.innerHTML = `<textarea cols="30"
+    rows="10" class="resultado" id="text-co">${variable}</textarea>
+    <button onclick="copiarTexto()" class="button btn-copiar" id="btn-cop">Copiar</button>`;
   }
 }
 
-function copiarTexto() {
-  const textoCopia = document.getElementById("text-co");
-  textoCopia.select();
-  document.execCommand('copy');
-}
-
-function desencriptarContenedor() {
-  mostrarTexto.innerHTML = `<p class="resultado" id="text-co">${desencriptar(
-    areaTexto.value
-  )}</p>
-  <button class="button btn-copiar" id="btn-cop">Copiar</button>`;
+async function copiarTexto() {
+  try {
+    const text = document.querySelector("#text-co");
+    await navigator.clipboard.writeText(text.value);
+    console.log("Texto copiado correctamente");
+  } catch (error) {
+    console.log("Error al copiar el texto");
+  }
 }
