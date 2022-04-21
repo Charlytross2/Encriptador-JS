@@ -31,6 +31,43 @@ function encriptar(texto) {
 
 function desencriptar(texto) {
   let textoDes = "";
+  for (let i = 0; i < texto.length; i++) {
+    switch (texto[i]) {
+      case "a":
+        if (texto[i + 1] == "i") {
+          textoDes += texto[i];
+          i += 1;
+        }
+        break;
+      case "e":
+        if (texto[i + 4] == "r") {
+          textoDes += texto[i];
+          i += 4;
+        }
+        break;
+      case "i":
+        if (texto[i + 3] == "s") {
+          textoDes += texto[i];
+          i += 3;
+        }
+        break;
+      case "o":
+        if (texto[i + 3] == "r") {
+          textoDes += texto[i];
+          i += 3;
+        }
+        break;
+      case "u":
+        if (texto[i + 3] == "t") {
+          textoDes += texto[i];
+          i += 3;
+        }
+        break;
+      default:
+        textoDes += texto[i];
+    }
+  }
+  return textoDes;
 }
 
 function cambiarContenedor(band) {
@@ -46,7 +83,7 @@ function cambiarContenedor(band) {
     </p>`;
   } else {
     mostrarTexto.innerHTML = `<textarea cols="30"
-    rows="10" class="resultado" id="text-co">${variable}</textarea>
+    rows="10" class="resultado" id="text-co" readonly>${variable}</textarea>
     <button onclick="copiarTexto()" class="button btn-copiar" id="btn-cop">Copiar</button>`;
   }
 }
