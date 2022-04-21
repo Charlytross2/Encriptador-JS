@@ -76,7 +76,7 @@ function cambiarContenedor(band) {
     ? (variable = desencriptar(areaTexto.value))
     : (variable = encriptar(areaTexto.value));
   if (areaTexto.value == "") {
-    mostrarTexto.innerHTML = `<img src="/img/img-desktop.svg" alt="imagen-niño" class="footer-img">
+    mostrarTexto.innerHTML = `<img src="./img/img-desktop.svg" alt="imagen-niño" class="footer-img">
     <h3 class="footer-title">Ningún mensaje fue encontrado</h3>
     <p type="text" class="footer-subtitle">
       Ingresa el texto que desees encriptar o desencriptar.
