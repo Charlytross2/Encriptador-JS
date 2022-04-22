@@ -3,21 +3,24 @@ const btnEncriptar = document.getElementById("encriptar");
 const btnDesencriptar = document.getElementById("desencriptar");
 const mostrarTexto = document.getElementById("mostrar-texto");
 const btnCopiar = document.querySelector("#btn-cop");
+const adver = document.querySelector(".main-advertencia");
 let band;
 
 cambiarContenedor();
 
 btnEncriptar.addEventListener("click", (e) => {
   if (validacionTexto(areaTexto.value)) {
+    adver.style.color = "black";
     band = false;
     cambiarContenedor(band);
-  }
+  }else adver.style.color = "red";
 });
 btnDesencriptar.addEventListener("click", (e) => {
   if (validacionTexto(areaTexto.value)) {
+    adver.style.color = "black";
     band = true;
     cambiarContenedor(band);
-  }
+  }else adver.style.color = "red";
 });
 
 function encriptar(texto) {
