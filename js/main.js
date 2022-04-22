@@ -6,13 +6,18 @@ const btnCopiar = document.querySelector("#btn-cop");
 let band;
 
 cambiarContenedor();
+
 btnEncriptar.addEventListener("click", (e) => {
-  band = false;
-  cambiarContenedor(band);
+  if (validacionTexto(areaTexto.value)) {
+    band = false;
+    cambiarContenedor(band);
+  }
 });
 btnDesencriptar.addEventListener("click", (e) => {
-  band = true;
-  cambiarContenedor(band);
+  if (validacionTexto(areaTexto.value)) {
+    band = true;
+    cambiarContenedor(band);
+  }
 });
 
 function encriptar(texto) {
@@ -95,5 +100,15 @@ async function copiarTexto() {
     console.log("Texto copiado correctamente");
   } catch (error) {
     console.log("Error al copiar el texto");
+  }
+}
+
+function validacionTexto(texto) {
+  band = false;
+  if (texto.match(/^[a-z]+[\sa-z]+$/)) {
+    band = true;
+    return band;
+  } else {
+    return band;
   }
 }
